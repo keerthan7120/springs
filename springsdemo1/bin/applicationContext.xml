@@ -10,16 +10,29 @@
 
    <bean id="myfortune"
         class="springsdemo1.HappyFortune">
-        </bean>s
+  
+   </bean>
 
 
 	<bean id="mycoach"
 				class="springsdemo1.BaseballCoach">
+	
+	<constructor-arg    ref="myfortune">
+	</constructor-arg>
 	     
 	</bean>
-	<constructor-arg ref="myfortune"/>
-	     
+	<bean id="mycricket" class="springsdemo1.CricketCoach">
+	<property name="FortuneService" ref="myfortune">
+	</property>
+	
+	<property name="emailAddess" value="keerthan@gmail.com"/>
+	<property name="team" value="lion"/>
+	
+	
 	</bean>
+	
+	
+	
    </beans>
 
 
